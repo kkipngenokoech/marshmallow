@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-4.0.0 (unreleased)
+4.0.0 (2025-04-16)
 ******************
 
 See :ref:`upgrading_4_0` for a guide on updating your code.
