@@ -1,6 +1,13 @@
 Changelog
 ---------
 
+4.1.0 (unreleased)
+++++++++++++++++++
+
+Other changes:
+
+- Drop support for Python 3.9 (:pr:`2363`).
+
 4.0.1 (2025-08-28)
 ++++++++++++++++++
 
