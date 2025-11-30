@@ -623,8 +623,7 @@ class OneOf(Validator):
         :param valuegetter: Can be a callable or a string. In the former case, it must
             be a one-argument callable which returns the value of a
             choice. In the latter case, the string specifies the name
-            of an attribute of the choice objects. Defaults to `str()`
-            or `str()`.
+            of an attribute of the choice objects. Defaults to `str()`.
         """
         valuegetter = valuegetter if callable(valuegetter) else attrgetter(valuegetter)
         pairs = zip_longest(self.choices, self.labels, fillvalue="")
