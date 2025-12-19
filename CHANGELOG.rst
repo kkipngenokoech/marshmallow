@@ -1,6 +1,14 @@
 Changelog
 ---------
 
+4.1.2 (2025-12-19)
+++++++++++++++++++
+
+Bug fixes:
+
+- :cve:`CVE-2025-68480`: Merge error store messages without rebuilding collections.
+  Thanks 카푸치노 for reporting and :user:`deckar01` for the fix.
+
 4.1.1 (2025-11-05)
 ++++++++++++++++++
 
