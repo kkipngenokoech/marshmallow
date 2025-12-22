@@ -1139,7 +1139,7 @@ class Schema(base.SchemaABC, metaclass=SchemaMeta):
                 msg = (
                     f'Field for "{field_name}" must be declared as a '
                     "Field instance, not a class. "
-                    f'Did you mean "fields.{field_obj.__name__}()"?'  # type: ignore[attr-defined]
+                    f'Did you mean "fields.{field_obj.__name__}()"?'
                 )
                 raise TypeError(msg) from error
             raise
