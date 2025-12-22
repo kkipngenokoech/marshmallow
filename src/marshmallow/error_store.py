@@ -25,12 +25,14 @@ class ErrorStore:
             messages = {index: messages}
         self.errors = merge_errors(self.errors, messages)
 
+
 def copy_containers(errors):
     if isinstance(errors, list):
         return [copy_containers(val) for val in errors]
     if isinstance(errors, dict):
         return {key: copy_containers(val) for key, val in errors.items()}
     return errors
+
 
 def merge_errors(errors1, errors2):  # noqa: PLR0911
     """Deeply merge two error messages.
