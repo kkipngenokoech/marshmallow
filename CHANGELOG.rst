@@ -6,7 +6,7 @@ Changelog
 
 Bug fixes:
 
-- :cve:`CVE-2025-68480`: Merge error store messages without rebuilding collections.
+- :cve:`2025-68480`: Merge error store messages without rebuilding collections.
   Thanks 카푸치노 for reporting and :user:`deckar01` for the fix.
 
 4.1.1 (2025-11-05)
@@ -160,6 +160,14 @@ Previously-deprecated APIs have been removed, including:
 - Passing `"self"` to `fields.Nested` (deprecated in 3.3.0). Use a callable instead.
 - ``Field.fail``, which was replaced by ``Field.make_error`` in 3.0.0.
 - `json_module` class Meta option (deprecated in 3.0.0b3). Use `render_module` instead.
+
+3.26.2 (2025-12-19)
++++++++++++++++++++
+
+Bug fixes:
+
+- :cve:`2025-68480`: Merge error store messages without rebuilding collections.
+  Thanks 카푸치노 for reporting and :user:`deckar01` for the fix.
 
 3.26.1 (2025-02-03)
 *******************
@@ -1720,7 +1728,7 @@ Bug fixes:
 
 Bug fixes:
 
-- :cve:`CVE-2018-17175`: Fix behavior when an empty list is passed as the ``only`` argument
+- :cve:`2018-17175`: Fix behavior when an empty list is passed as the ``only`` argument
   (:issue:`772`). Thanks :user:`deckar01` for reporting and thanks
   :user:`lafrech` for the fix.
 
