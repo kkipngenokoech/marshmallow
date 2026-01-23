@@ -214,8 +214,8 @@ class URL(Validator):
 
         # Hostname is optional for file URLS. If absent it means `localhost`.
         # Fill it in for the validation if needed
-        if scheme == "file" and value.startswith("file:///"):
-            matched = regex.search(value.replace("file:///", "file://localhost/", 1))
+        if scheme == "file" and value.lower().startswith("file:///"):
+            matched = regex.search("file://localhost/" + value[8:])
         else:
             matched = regex.search(value)
 
