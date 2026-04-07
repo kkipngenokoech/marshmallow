@@ -79,6 +79,28 @@ def test_get_value():
     assert utils.get_value(lst, MyInt(1)) == 2
 
 
+def test_get_value_out_of_range_int_index():
+    """Test that out-of-range int indices return default value instead of raising TypeError."""
+    # Case 1: List with out-of-range index
+    lst = [0, 1, 2, 3, 4, 5]
+    assert utils.get_value(lst, 999, default=3) == 3
+    
+    # Case 2: Dictionary with integer keys
+    dictionary = {1: 'a', 2: 'b', 3: 'c'}
+    assert utils.get_value(dictionary, 4, default='z') == 'z'
+    
+    # Case 3: List of objects with out-of-range index
+    list_obj = [[PointClass(24, 42), {"x": 24, "y": 42}]]
+    assert utils.get_value(list_obj, 3, default=None) is None
+    
+    # Case 4: Negative out-of-range index
+    assert utils.get_value(lst, -999, default='negative') == 'negative'
+    
+    # Case 5: Empty list
+    empty_list = []
+    assert utils.get_value(empty_list, 0, default='empty') == 'empty'
+
+
 def test_set_value():
     d: dict[str, int | dict] = {}
     utils.set_value(d, "foo", 42)
@@ -124,7 +146,7 @@ def test_from_timestamp_with_negative_value():
 
 def test_from_timestamp_with_overflow_value():
     value = 9223372036854775
-    with pytest.raises(ValueError, match=r"out of range|year must be in 1\.\.9999"):
+    with pytest.raises(ValueError, match=r"out of range|year must be in 1\.\. 9999"):
         utils.from_timestamp(value)
 
 
